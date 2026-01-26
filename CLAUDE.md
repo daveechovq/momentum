@@ -17,7 +17,11 @@ The offering is built around three complementary energies:
 ## File Structure
 ```
 momentum-website/
-├── index.html          # Main single-page site
+├── index.html          # Homepage (hero, highlights, CTA)
+├── about.html          # About page (why, three forces, how it works, science)
+├── team.html           # Team page (bios, who we work with)
+├── programs.html       # Programs page (offerings, add-ons, process)
+├── contact.html        # Contact page (form)
 ├── css/
 │   └── styles.css      # All styles (CSS variables at top)
 ├── js/
@@ -58,18 +62,38 @@ momentum-website/
 - Direct, not corporate
 - Conversational ("Here's what we've noticed...")
 
-## Page Sections (in order)
+## Page Structure
+
+### index.html (Homepage)
 1. **Hero** - Main headline, CTA
 2. **Truth** - "The honest truth" - why this matters
 3. **Forces** - Three Forces visual + cards
 4. **How** - Voice, Movement, Music explanation
-5. **Who** - Target audiences (Workplaces, Schools, Sports, Events)
-6. **Team** - Three facilitators with Outward/Inward/Connecting labels
-7. **Programs** - Half-Day ($4,500) and Full-Day ($6,500)
+5. **Who** - Target audiences
+6. **Team** - Three facilitators (brief)
+7. **Programs** - Half-Day and Full-Day (brief)
 8. **Science** - Research backing
-9. **Testimonial** - Placeholder for now
-10. **CTA/Contact** - Form (Netlify Forms)
-11. **Footer**
+9. **Testimonial** - Placeholder
+10. **CTA Banner** - Links to contact page
+
+### about.html
+- Truth section (expanded)
+- Three Forces section
+- How It Works section
+- Science section
+
+### team.html
+- Team bios (expanded with full credentials)
+- Who we work with section
+
+### programs.html
+- Half-Day / Full-Day programs (detailed)
+- Add-ons section
+- Process steps (1-4)
+- Testimonial
+
+### contact.html
+- Contact form (Netlify Forms)
 
 ## Making Changes
 

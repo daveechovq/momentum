@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact | Momentum</title>
+    <meta name="description" content="Start a conversation with the Momentum team about your next team experience.">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,400;1,500&family=DM+Sans:ital,wght@0,400;0,500;0,600;1,400&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="nav">
+        <a href="index.html" class="nav__logo">Momentum</a>
+        <ul class="nav__links">
+            <li><a href="about.html" class="nav__link">About</a></li>
+            <li><a href="team.html" class="nav__link">Team</a></li>
+            <li><a href="programs.html" class="nav__link">Programs</a></li>
+            <li><a href="contact.html" class="nav__link nav__link--active nav__cta">Let's Talk</a></li>
+        </ul>
+        <button class="nav__toggle" aria-label="Toggle menu">
+            <span></span>
+            <span></span>
+            <span></span>
+        </button>
+    </nav>
+
+    <!-- Page Header -->
+    <section class="page-header">
+        <div class="page-header__content">
+            <span class="section-label">Contact</span>
+            <h1 class="page-header__title">Let's have a <em>conversation</em></h1>
+            <p class="page-header__subtitle">Tell us a bit about your team and what you're hoping to achieve. We'll be in touch within 48 hours.</p>
+        </div>
+    </section>
+
+    <!-- Contact Form Section -->
+    <section class="contact">
+        <div class="contact__container">
+            <form name="contact" method="POST" data-netlify="true" class="contact__form reveal">
+                <input type="hidden" name="form-name" value="contact">
+
+                <div class="contact__field">
+                    <label for="name">Your name</label>
+                    <input type="text" id="name" name="name" required>
+                </div>
+
+                <div class="contact__field">
+                    <label for="email">Email address</label>
+                    <input type="email" id="email" name="email" required>
+                </div>
+
+                <div class="contact__field">
+                    <label for="organisation">Organisation</label>
+                    <input type="text" id="organisation" name="organisation">
+                </div>
+
+                <div class="contact__field">
+                    <label for="team-size">Approximate team size</label>
+                    <select id="team-size" name="team-size">
+                        <option value="">Select...</option>
+                        <option value="6-10">6-10 people</option>
+                        <option value="11-20">11-20 people</option>
+                        <option value="21-35">21-35 people</option>
+                        <option value="35+">More than 35</option>
+                    </select>
+                </div>
+
+                <div class="contact__field contact__field--full">
+                    <label for="message">Tell us about your team and what you're hoping to achieve</label>
+                    <textarea id="message" name="message" rows="5"></textarea>
+                </div>
+
+                <div class="contact__field contact__field--full">
+                    <label for="how-heard">How did you hear about us?</label>
+                    <input type="text" id="how-heard" name="how-heard">
+                </div>
+
+                <button type="submit" class="btn btn--primary contact__submit">
+                    <span>Send Message</span>
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                        <line x1="5" y1="12" x2="19" y2="12"></line>
+                        <polyline points="12 5 19 12 12 19"></polyline>
+                    </svg>
+                </button>
+            </form>
+
+            <div class="contact__info reveal reveal-delay-1">
+                <div class="contact__info-block">
+                    <h3>Prefer to talk?</h3>
+                    <p>We're happy to jump on a call to discuss your needs. Fill out the form and mention you'd like to chat, and we'll arrange a time.</p>
+                </div>
+                <div class="contact__info-block">
+                    <h3>Based in Brisbane</h3>
+                    <p>We're located in Brisbane, Australia. We travel throughout South East Queensland and beyond for the right fit.</p>
+                </div>
+                <div class="contact__info-block">
+                    <h3>Response time</h3>
+                    <p>We typically respond within 48 hours. If it's urgent, let us know in your message.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="footer__content">
+            <span class="footer__logo">Momentum</span>
+            <div class="footer__links">
+                <a href="about.html">About</a>
+                <a href="team.html">Team</a>
+                <a href="programs.html">Programs</a>
+                <a href="contact.html">Contact</a>
+            </div>
+            <span class="footer__copy">&copy; 2025 Momentum. Brisbane, Australia.</span>
+        </div>
+        <div class="footer__acknowledgement">
+            <p>We acknowledge the Turrbal people, on whose Country we are based, and recognise Aboriginal and Torres Strait Islander peoples across Australia. Their rich culture, wisdom and art inspire our work. We pay our respects to Elders past, present, and emerging, and reaffirm our commitment to reconciliation.</p>
+        </div>
+    </footer>
+
+    <script src="js/main.js"></script>
+</body>
+</html>
