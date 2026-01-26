@@ -163,14 +163,16 @@ section {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    background-color: rgba(247, 244, 239, 0.92);
-    backdrop-filter: blur(12px);
-    border-bottom: 1px solid rgba(0, 0, 0, 0.04);
+    background-color: transparent;
+    border-bottom: 1px solid transparent;
     transition: all 0.3s var(--ease-smooth);
 }
 
 .nav--scrolled {
     padding: 1rem var(--space-lg);
+    background-color: rgba(247, 244, 239, 0.92);
+    backdrop-filter: blur(12px);
+    border-bottom: 1px solid rgba(0, 0, 0, 0.04);
     box-shadow: var(--shadow-sm);
 }
 
@@ -181,6 +183,11 @@ section {
     font-style: italic;
     letter-spacing: 0.02em;
     text-transform: lowercase;
+    color: var(--color-warm-white);
+    transition: color 0.3s var(--ease-smooth);
+}
+
+.nav--scrolled .nav__logo {
     color: var(--color-charcoal);
 }
 
@@ -194,9 +201,13 @@ section {
 .nav__link {
     font-size: 0.85rem;
     font-weight: 500;
-    color: var(--color-charcoal-light);
+    color: rgba(255, 255, 255, 0.85);
     transition: color 0.3s ease;
     position: relative;
+}
+
+.nav--scrolled .nav__link {
+    color: var(--color-charcoal-light);
 }
 
 .nav__link::after {
@@ -206,11 +217,19 @@ section {
     left: 0;
     width: 0;
     height: 1px;
+    background-color: var(--color-warm-white);
+    transition: width 0.3s var(--ease-out-expo), background-color 0.3s ease;
+}
+
+.nav--scrolled .nav__link::after {
     background-color: var(--color-terracotta);
-    transition: width 0.3s var(--ease-out-expo);
 }
 
 .nav__link:hover {
+    color: var(--color-warm-white);
+}
+
+.nav--scrolled .nav__link:hover {
     color: var(--color-charcoal);
 }
 
@@ -250,8 +269,12 @@ section {
 .nav__toggle span {
     width: 24px;
     height: 2px;
-    background-color: var(--color-charcoal);
+    background-color: var(--color-warm-white);
     transition: all 0.3s ease;
+}
+
+.nav--scrolled .nav__toggle span {
+    background-color: var(--color-charcoal);
 }
 
 /* --- Buttons --- */
