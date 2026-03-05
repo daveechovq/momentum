@@ -6,6 +6,7 @@ document.addEventListener('DOMContentLoaded', () => {
     initScrollReveal();
     initNavigation();
     initSmoothScroll();
+    initHeroParallax();
 });
 
 /* --- Scroll Reveal Animation --- */
@@ -91,6 +92,24 @@ function initSmoothScroll() {
                 });
             }
         });
+    });
+}
+
+/* --- Hero Parallax --- */
+function initHeroParallax() {
+    const heroBg = document.querySelector('.hero__bg');
+    if (!heroBg) return;
+
+    let ticking = false;
+    window.addEventListener('scroll', () => {
+        if (!ticking) {
+            requestAnimationFrame(() => {
+                const scrollY = window.pageYOffset;
+                heroBg.style.transform = `translateY(${scrollY * 0.4}px)`;
+                ticking = false;
+            });
+            ticking = true;
+        }
     });
 }
 
