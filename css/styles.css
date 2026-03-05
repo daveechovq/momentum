@@ -521,6 +521,11 @@ section {
     padding: var(--space-2xl) var(--space-lg);
 }
 
+.truth--compact {
+    padding: var(--space-xl) var(--space-lg);
+    background-color: var(--color-cream);
+}
+
 .truth__grid {
     display: grid;
     grid-template-columns: 1fr 1fr;
@@ -1610,6 +1615,168 @@ section {
 
 .programs--page .programs__card--featured .programs__cta {
     background-color: var(--color-forest);
+}
+
+.programs__badge--recommended {
+    background-color: var(--color-gold) !important;
+    color: var(--color-warm-white) !important;
+    margin-right: 0.5rem;
+}
+
+.programs__value-note {
+    font-size: 0.85rem;
+    color: var(--color-charcoal-light);
+    font-style: italic;
+    margin-bottom: 1.5rem;
+    padding-top: 0.5rem;
+}
+
+.programs__availability {
+    text-align: center;
+    font-size: 0.9rem;
+    color: var(--color-charcoal-light);
+    font-style: italic;
+    margin-top: var(--space-md);
+    max-width: 600px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+/* --- Credibility Strip --- */
+.credibility {
+    padding: var(--space-lg) var(--space-lg);
+    background: var(--color-forest);
+    text-align: center;
+}
+
+.credibility__content p {
+    font-family: var(--font-display);
+    font-size: 1.2rem;
+    font-style: italic;
+    color: var(--color-sand);
+    max-width: 750px;
+    margin: 0 auto;
+    line-height: 1.6;
+}
+
+/* --- FAQ Section --- */
+.faq {
+    padding: var(--space-xl) var(--space-lg);
+    background: var(--color-cream);
+}
+
+.faq__grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: var(--space-md);
+    max-width: 900px;
+    margin: 0 auto;
+}
+
+.faq__item {
+    padding: 2rem;
+    background: var(--color-warm-white);
+    border-radius: 16px;
+    border: 1px solid var(--color-sand);
+}
+
+.faq__item h4 {
+    font-family: var(--font-display);
+    font-size: 1.15rem;
+    color: var(--color-forest);
+    margin-bottom: 0.75rem;
+}
+
+.faq__item p {
+    font-size: 0.9rem;
+    color: var(--color-charcoal-light);
+    line-height: 1.6;
+}
+
+/* --- Promise Section --- */
+.promise {
+    padding: var(--space-lg) var(--space-lg);
+    background: var(--color-warm-white);
+    text-align: center;
+}
+
+.promise__content {
+    max-width: 600px;
+    margin: 0 auto;
+    padding: 2.5rem;
+    border: 2px solid var(--color-sand);
+    border-radius: 20px;
+}
+
+.promise__content h3 {
+    font-family: var(--font-display);
+    font-size: 1.5rem;
+    color: var(--color-forest);
+    margin-bottom: 0.75rem;
+}
+
+.promise__content p {
+    font-size: 1rem;
+    color: var(--color-charcoal-light);
+    line-height: 1.6;
+}
+
+/* --- CTA Banner Description --- */
+.cta-banner__desc {
+    font-size: 1.05rem;
+    color: var(--color-sand);
+    max-width: 500px;
+    margin: 0 auto 2rem;
+}
+
+@media (max-width: 768px) {
+    .faq__grid {
+        grid-template-columns: 1fr;
+    }
+}
+
+/* --- Outcomes Section --- */
+.outcomes {
+    padding: var(--space-xl) var(--space-lg);
+    background: var(--color-warm-white);
+}
+
+.outcomes__grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: var(--space-md);
+    max-width: 1000px;
+    margin: 0 auto;
+}
+
+.outcomes__card {
+    text-align: center;
+    padding: 2rem 1.5rem;
+}
+
+.outcomes__card h4 {
+    font-family: var(--font-display);
+    font-size: 1.25rem;
+    color: var(--color-forest);
+    margin-bottom: 0.5rem;
+}
+
+.outcomes__card p {
+    font-size: 0.9rem;
+    color: var(--color-charcoal-light);
+}
+
+@media (max-width: 1024px) {
+    .outcomes__grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (max-width: 768px) {
+    .outcomes__grid {
+        grid-template-columns: 1fr;
+        max-width: 350px;
+    }
 }
 
 /* --- Add-ons Section --- */
