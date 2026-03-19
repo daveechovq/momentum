@@ -7,6 +7,7 @@ document.addEventListener('DOMContentLoaded', () => {
     initNavigation();
     initSmoothScroll();
     initHeroParallax();
+    initCountUp();
 });
 
 /* --- Scroll Reveal Animation --- */
@@ -111,6 +112,56 @@ function initHeroParallax() {
             ticking = true;
         }
     });
+}
+
+/* --- Count Up Animation --- */
+function initCountUp() {
+    const counters = document.querySelectorAll('[data-count]');
+    if (!counters.length) return;
+
+    const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                animateCounter(entry.target);
+                observer.unobserve(entry.target);
+            }
+        });
+    }, { threshold: 0.3 });
+
+    counters.forEach(el => observer.observe(el));
+}
+
+function animateCounter(el) {
+    const target = el.getAttribute('data-count');
+    const prefix = el.getAttribute('data-prefix') || '';
+    const suffix = el.getAttribute('data-suffix') || '';
+    const isDecimal = target.includes('.');
+    const end = parseFloat(target);
+    const duration = 1500;
+    const start = performance.now();
+
+    function easeOutQuart(t) {
+        return 1 - Math.pow(1 - t, 4);
+    }
+
+    function update(now) {
+        const elapsed = now - start;
+        const progress = Math.min(elapsed / duration, 1);
+        const eased = easeOutQuart(progress);
+        const current = eased * end;
+
+        if (isDecimal) {
+            el.textContent = prefix + current.toFixed(1) + suffix;
+        } else {
+            el.textContent = prefix + Math.round(current) + suffix;
+        }
+
+        if (progress < 1) {
+            requestAnimationFrame(update);
+        }
+    }
+
+    requestAnimationFrame(update);
 }
 
 /* --- Form Handling (for success message) --- */

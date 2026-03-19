@@ -856,6 +856,11 @@ section {
     margin: 0 auto;
 }
 
+.programs__grid--three {
+    grid-template-columns: repeat(3, 1fr);
+    max-width: 1100px;
+}
+
 .programs__card {
     background-color: rgba(255, 255, 255, 0.08);
     backdrop-filter: blur(10px);
@@ -868,6 +873,12 @@ section {
 .programs__card:hover {
     background-color: rgba(255, 255, 255, 0.12);
     transform: translateY(-4px);
+}
+
+.programs__card--featured {
+    background-color: rgba(255, 255, 255, 0.14);
+    border-color: rgba(255, 255, 255, 0.25);
+    box-shadow: 0 8px 30px rgba(0, 0, 0, 0.15);
 }
 
 .programs__badge {
@@ -1730,8 +1741,15 @@ section {
 }
 
 @media (max-width: 768px) {
-    .faq__grid {
+    .faq__grid,
+    .faq__grid--three {
         grid-template-columns: 1fr;
+    }
+
+    .stats__grid {
+        grid-template-columns: 1fr;
+        max-width: 300px;
+        margin: 0 auto;
     }
 }
 
@@ -1992,8 +2010,115 @@ section {
     color: var(--color-charcoal-light);
 }
 
+/* --- Stats Section (Numbers We Don't Lead With) --- */
+.stats__grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1.25rem;
+}
+
+.stats__card {
+    background-color: var(--color-warm-white);
+    border-radius: 16px;
+    padding: 2rem;
+    text-align: center;
+    border: 1px solid var(--color-sand);
+}
+
+.stats__number {
+    font-family: var(--font-display);
+    font-size: 3rem;
+    font-weight: 400;
+    color: var(--color-charcoal);
+    line-height: 1;
+    margin-bottom: 0.5rem;
+}
+
+.stats__label {
+    font-size: 0.9rem;
+    color: var(--color-charcoal-light);
+    line-height: 1.4;
+}
+
+.stats__source {
+    display: block;
+    font-size: 0.7rem;
+    color: var(--color-charcoal-light);
+    opacity: 0.6;
+    margin-top: 0.5rem;
+    font-style: italic;
+}
+
+.stats__micro-cta {
+    text-align: center;
+    margin-top: var(--space-md);
+}
+
+.stats__micro-cta a {
+    color: var(--color-terracotta);
+    font-weight: 500;
+    border-bottom: 1px solid var(--color-terracotta-light);
+    transition: border-color 0.3s ease;
+}
+
+.stats__micro-cta a:hover {
+    border-color: var(--color-terracotta);
+}
+
+/* --- FAQ Three-Column Variant --- */
+.faq__grid--three {
+    grid-template-columns: repeat(3, 1fr);
+    max-width: 1100px;
+}
+
+/* --- Decision-Maker One-Pager CTA --- */
+.onepager {
+    padding: var(--space-lg) var(--space-lg);
+    background: var(--color-warm-white);
+    text-align: center;
+}
+
+.onepager__content {
+    max-width: 600px;
+    margin: 0 auto;
+    padding: 2.5rem;
+    border: 2px solid var(--color-sand);
+    border-radius: 20px;
+}
+
+.onepager__content .section-label {
+    display: block;
+    margin-bottom: 1rem;
+}
+
+.onepager__content .section-title {
+    margin-bottom: 1rem;
+}
+
+.onepager__content p {
+    font-size: 1rem;
+    color: var(--color-charcoal-light);
+    line-height: 1.6;
+    margin-bottom: 1.5rem;
+}
+
+.onepager__content .btn {
+    display: inline-flex;
+}
+
+/* --- Testimonial Avatar Image --- */
+.testimonial__avatar img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 50%;
+}
+
 /* --- Responsive --- */
 @media (max-width: 1024px) {
+    .faq__grid--three {
+        grid-template-columns: repeat(2, 1fr);
+    }
     :root {
         --space-lg: 3rem;
         --space-xl: 5rem;
@@ -2043,7 +2168,8 @@ section {
         grid-template-columns: repeat(2, 1fr);
     }
 
-    .programs__grid {
+    .programs__grid,
+    .programs__grid--three {
         grid-template-columns: 1fr;
         max-width: 500px;
     }

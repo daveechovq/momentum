@@ -1,0 +1,407 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>The Business Case for Momentum</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400&family=DM+Sans:wght@400;500;600&display=swap" rel="stylesheet">
+    <style>
+        @page {
+            size: A4;
+            margin: 15mm 18mm;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'DM Sans', -apple-system, sans-serif;
+            background: #F7F4EF;
+            color: #2C2C2C;
+            font-size: 10pt;
+            line-height: 1.5;
+            max-width: 210mm;
+            margin: 0 auto;
+            padding: 15mm 18mm;
+        }
+
+        h1, h2, h3 {
+            font-family: 'Cormorant Garamond', Georgia, serif;
+            font-weight: 500;
+        }
+
+        .header {
+            text-align: center;
+            margin-bottom: 20pt;
+            padding-bottom: 14pt;
+            border-bottom: 2px solid #C4785A;
+        }
+
+        .header h1 {
+            font-size: 22pt;
+            color: #2C2C2C;
+            margin-bottom: 4pt;
+        }
+
+        .header h1 em {
+            color: #C4785A;
+            font-style: italic;
+        }
+
+        .header p {
+            font-size: 9pt;
+            color: #4A4A4A;
+        }
+
+        .two-col {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 16pt;
+            margin-bottom: 16pt;
+        }
+
+        .section {
+            margin-bottom: 16pt;
+        }
+
+        .section h2 {
+            font-size: 13pt;
+            color: #2D4A3E;
+            margin-bottom: 6pt;
+            padding-bottom: 3pt;
+            border-bottom: 1px solid #E8E2D9;
+        }
+
+        .section h2 em {
+            color: #C4785A;
+            font-style: italic;
+        }
+
+        .section p {
+            font-size: 9.5pt;
+            color: #4A4A4A;
+            line-height: 1.5;
+        }
+
+        .stats-row {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 10pt;
+            margin-top: 8pt;
+        }
+
+        .stat {
+            text-align: center;
+            padding: 8pt;
+            background: #FDFCFA;
+            border: 1px solid #E8E2D9;
+            border-radius: 6pt;
+        }
+
+        .stat .number {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 20pt;
+            color: #2C2C2C;
+            line-height: 1.1;
+        }
+
+        .stat .label {
+            font-size: 8pt;
+            color: #4A4A4A;
+        }
+
+        .outcomes-row {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 10pt;
+            margin-top: 8pt;
+        }
+
+        .outcome {
+            text-align: center;
+            padding: 8pt;
+            background: #FDFCFA;
+            border-radius: 6pt;
+            border-left: 3px solid #2D4A3E;
+        }
+
+        .outcome .number {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 18pt;
+            color: #2D4A3E;
+            line-height: 1.1;
+        }
+
+        .outcome .label {
+            font-size: 8pt;
+            color: #4A4A4A;
+        }
+
+        .case-study {
+            background: #FDFCFA;
+            border: 1px solid #E8E2D9;
+            border-radius: 8pt;
+            padding: 10pt 14pt;
+            margin-top: 8pt;
+        }
+
+        .case-study h3 {
+            font-size: 10pt;
+            color: #C4785A;
+            margin-bottom: 4pt;
+        }
+
+        .case-study p {
+            font-size: 9pt;
+            color: #4A4A4A;
+        }
+
+        .case-study .metrics {
+            display: flex;
+            gap: 16pt;
+            margin-top: 6pt;
+        }
+
+        .case-study .metric {
+            font-size: 8.5pt;
+        }
+
+        .case-study .metric strong {
+            color: #2D4A3E;
+        }
+
+        .programs-row {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 10pt;
+            margin-top: 8pt;
+        }
+
+        .program {
+            padding: 10pt;
+            background: #FDFCFA;
+            border-radius: 6pt;
+            border: 1px solid #E8E2D9;
+        }
+
+        .program h3 {
+            font-size: 11pt;
+            color: #2D4A3E;
+            margin-bottom: 3pt;
+        }
+
+        .program .duration {
+            font-size: 8pt;
+            font-weight: 600;
+            color: #C4785A;
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+            margin-bottom: 4pt;
+        }
+
+        .program p {
+            font-size: 8.5pt;
+            color: #4A4A4A;
+        }
+
+        .team-row {
+            margin-top: 6pt;
+        }
+
+        .team-member {
+            display: flex;
+            gap: 4pt;
+            margin-bottom: 3pt;
+            font-size: 9pt;
+        }
+
+        .team-member strong {
+            color: #2C2C2C;
+            min-width: 110pt;
+        }
+
+        .team-member span {
+            color: #4A4A4A;
+        }
+
+        .testimonial {
+            background: #FDFCFA;
+            border-left: 3px solid #C4785A;
+            padding: 8pt 12pt;
+            margin-top: 10pt;
+            border-radius: 0 6pt 6pt 0;
+        }
+
+        .testimonial p {
+            font-family: 'Cormorant Garamond', serif;
+            font-style: italic;
+            font-size: 10pt;
+            color: #2C2C2C;
+            line-height: 1.4;
+        }
+
+        .testimonial cite {
+            display: block;
+            font-style: normal;
+            font-family: 'DM Sans', sans-serif;
+            font-size: 8pt;
+            color: #4A4A4A;
+            margin-top: 4pt;
+        }
+
+        .next-step {
+            text-align: center;
+            margin-top: 16pt;
+            padding-top: 12pt;
+            border-top: 2px solid #C4785A;
+        }
+
+        .next-step h2 {
+            font-size: 14pt;
+            color: #2C2C2C;
+            margin-bottom: 4pt;
+        }
+
+        .next-step p {
+            font-size: 9.5pt;
+            color: #4A4A4A;
+        }
+
+        .next-step .contact {
+            margin-top: 6pt;
+            font-weight: 600;
+            color: #C4785A;
+            font-size: 10pt;
+        }
+
+        @media print {
+            body {
+                padding: 0;
+                background: white;
+            }
+
+            .stat, .outcome, .program, .case-study {
+                -webkit-print-color-adjust: exact;
+                print-color-adjust: exact;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <div class="header">
+        <h1>The Business Case for <em>Momentum</em></h1>
+        <p>Team experiences through voice, movement, and music | Brisbane, Australia</p>
+    </div>
+
+    <div class="section">
+        <h2>The <em>Problem</em></h2>
+        <p>Traditional team-building is forgettable. Meanwhile, disengagement is costing organisations more than they realise.</p>
+        <div class="stats-row">
+            <div class="stat">
+                <div class="number">69%</div>
+                <div class="label">of employees aren't engaged</div>
+            </div>
+            <div class="stat">
+                <div class="number">$8.8T</div>
+                <div class="label">lost to disengagement globally/year</div>
+            </div>
+            <div class="stat">
+                <div class="number">31%</div>
+                <div class="label">of workers are actively disengaged</div>
+            </div>
+        </div>
+        <p style="font-size: 7.5pt; color: #999; margin-top: 4pt; text-align: right;">Source: Gallup State of the Global Workplace, 2023</p>
+    </div>
+
+    <div class="section">
+        <h2>The <em>Solution</em></h2>
+        <p>Momentum uses three evidence-based modalities — voice, movement, and live music — to create team experiences that shift how people connect, communicate, and perform. Every session is designed around your group by three specialist facilitators, present the entire time.</p>
+    </div>
+
+    <div class="section">
+        <h2>Measured <em>Outcomes</em></h2>
+        <p>Organisations with genuinely engaged teams consistently outperform. Industry benchmarks show:</p>
+        <div class="outcomes-row">
+            <div class="outcome">
+                <div class="number">+23%</div>
+                <div class="label">Higher profitability</div>
+            </div>
+            <div class="outcome">
+                <div class="number">+14%</div>
+                <div class="label">More productivity</div>
+            </div>
+            <div class="outcome">
+                <div class="number">-45%</div>
+                <div class="label">Less turnover</div>
+            </div>
+        </div>
+        <p style="font-size: 7.5pt; color: #999; margin-top: 4pt; text-align: right;">Source: Gallup Meta-Analysis, 2020</p>
+    </div>
+
+    <div class="section">
+        <h2>Case Study: <em>Financial Services</em></h2>
+        <div class="case-study">
+            <h3>Large Financial Services Organisation</h3>
+            <p>After implementing experiential team engagement programs with voice and movement components, this organisation reported measurable improvements across key engagement metrics.</p>
+            <div class="metrics">
+                <div class="metric"><strong>+38%</strong> engagement scores</div>
+                <div class="metric"><strong>-28%</strong> staff turnover</div>
+                <div class="metric"><strong>+34%</strong> collaboration ratings</div>
+            </div>
+        </div>
+    </div>
+
+    <div class="two-col">
+        <div class="section" style="margin-bottom: 0;">
+            <h2>Programs</h2>
+            <div class="programs-row" style="margin-top: 6pt;">
+                <div class="program">
+                    <div class="duration">4 Hours</div>
+                    <h3>Half-Day</h3>
+                    <p>Consultation, breathwork, vocal expression, movement, collaborative activities, reflection.</p>
+                </div>
+                <div class="program">
+                    <div class="duration">7 Hours</div>
+                    <h3>Full-Day</h3>
+                    <p>Everything in Half-Day plus extended movement, group harmony, intention-setting, follow-up.</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="section" style="margin-bottom: 0;">
+            <h2>The <em>Team</em></h2>
+            <div class="team-row">
+                <div class="team-member">
+                    <strong>Darren Percival</strong>
+                    <span>Voice — The Voice Australia, Gold Record artist, 30+ years</span>
+                </div>
+                <div class="team-member">
+                    <strong>Linda Lou Kuster</strong>
+                    <span>Movement — Psychology Masters, ZenThai Shiatsu, Yoga & QiGong</span>
+                </div>
+                <div class="team-member">
+                    <strong>Dave Spicer</strong>
+                    <span>Music — Jazz pianist, Griffith Conservatorium lecturer, KAWAI Artist</span>
+                </div>
+            </div>
+            <div class="testimonial">
+                <p>"Their warmth, talent, and genuine compassion filled the room with joy, connection, and healing."</p>
+                <cite>— Ronnie Benbow, Director, The Carers Foundation</cite>
+            </div>
+        </div>
+    </div>
+
+    <div class="next-step">
+        <h2>Ready to talk?</h2>
+        <p>Book a free 20-minute discovery call. No pitch, no pressure — just a conversation about your team.</p>
+        <p class="contact">momentum.com.au &nbsp;|&nbsp; hello@momentum.com.au</p>
+    </div>
+
+</body>
+</html>
